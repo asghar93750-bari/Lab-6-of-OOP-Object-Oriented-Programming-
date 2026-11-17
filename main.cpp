@@ -1,20 +1,21 @@
-#include <iostream>
-#include "DArray.h" 
 
+#include <iostream>
+#include "DArray.h"
+using namespace std;
 int main()
 {
-    DArray darr1, darr2; // both have size 0
+    DArray darr1;
     for (int j{}; j < 15; ++j)
     {
         darr1.push_back(j * 2);
+
+        cout << darr1.size()<< '\t'<< darr1.capacity()<< endl;
     }
     cout << darr1 << endl;
-    darr2 = darr1;
-    for (int j{15}; j >= 0; --j)
+    for (int j{}; j < 15; ++j)
     {
-        darr2.push_back(j * 3);
+        darr1[j] += j;
     }
-    cout << darr2 << endl;
-
+    cout << darr1 << endl;
     return 0;
-}
+};
